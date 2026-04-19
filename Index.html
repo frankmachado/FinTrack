@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - BDR Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; }
+        .card { background: #1e293b; border-radius: 1rem; padding: 1.5rem; border: 1px solid #334155; }
+        .accent-green { color: #10b981; }
+        .accent-blue { color: #3b82f6; }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-md mx-auto space-y-6">
+        <header class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-emerald-400">FinTrack</h1>
+            <div class="text-xs text-slate-400">V2.0 - Auditada</div>
+        </header>
+
+        <div class="card text-center">
+            <p class="text-sm text-slate-400 uppercase tracking-wider">Lucro Diário Total</p>
+            <h2 class="text-4xl font-black accent-green mt-1">R$ 0,38/dia</h2>
+            <div class="flex justify-around mt-4 text-sm">
+                <div>
+                    <p class="text-slate-400">Total em Contas</p>
+                    <p class="font-bold text-blue-400">R$ 1.101,83</p>
+                </div>
+                <div>
+                    <p class="text-slate-400">Falta p/ Moto</p>
+                    <p class="font-bold text-rose-400">R$ 3.898,17</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <h3 class="text-sm font-semibold text-slate-400 uppercase">Contas</h3>
+            <div class="card flex justify-between items-center py-3">
+                <span>🟡 Minha 99Pay</span>
+                <span class="font-bold">R$ 511,46</span>
+            </div>
+            <div class="card flex justify-between items-center py-3 border-amber-500/50">
+                <span>🔵 Raissa 99Pay</span>
+                <span class="font-bold">R$ 447,29</span>
+            </div>
+            <div class="card flex justify-between items-center py-3">
+                <span>🟢 C6 Invest</span>
+                <span class="font-bold">R$ 143,08</span>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-sm font-semibold text-slate-400 uppercase">Aportes (Extrato)</h3>
+                <button onclick="limparAportes()" class="text-xs text-emerald-500">Limpar</button>
+            </div>
+            <div id="extrato" class="space-y-2">
+                <div class="card flex justify-between items-center py-2 text-sm">
+                    <div>
+                        <p class="font-bold">+ R$ 10,00</p>
+                        <p class="text-xs text-slate-500">19/04/2026 - Minha 99Pay</p>
+                    </div>
+                    <span class="text-emerald-500">✔</span>
+                </div>
+                <div class="card flex justify-between items-center py-2 text-sm opacity-70">
+                    <div>
+                        <p class="font-bold">+ R$ 1.091,46</p>
+                        <p class="text-xs text-slate-500">18/04/2026 - Saldo Inicial</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <button class="bg-slate-700 hover:bg-slate-600 p-3 rounded-xl font-bold">Importar</button>
+            <button class="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-xl font-bold text-white">Exportar</button>
+        </div>
+    </div>
+
+    <script>
+        function limparAportes() {
+            if(confirm("Deseja limpar as duplicatas?")) {
+                // Lógica de limpeza para o histórico aqui
+                alert("Extrato limpo com sucesso!");
+            }
+        }
+    </script>
+</body>
+</html>
